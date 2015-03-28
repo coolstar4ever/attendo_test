@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GUEST</title>
+</head>
+
+<link rel="stylesheet" href="css/guest.css">
+
+<body>
+
+     <div id="container">
+            <div id="headlabel"> How many classes :  </div>
+        <!-- <div class="label">attended</div> --><input type="text" id="classes_present"  class="inbox" required placeholder="attended"><br>
+        <!-- <div class="label">conducted</div> --><input type="text" id="classes_conducted" class="inbox" required placeholder="conducted">
+        <br><input type="submit" id="button_calculate" value="calculate" onclick="calc()">
+        <div id="result"></div>
+     </div>
+
+        <script>
+        function calc()
+        {
+            var attended = parseInt(document.getElementById("classes_present").value);
+            var conducted = parseInt(document.getElementById("classes_conducted").value);
+            var attendance = ((attended/conducted)*100);
+            attendance= attendance.toFixed(2);
+            document.getElementById("result").innerHTML = "attendance : "+attendance+"%";
+        }
+        </script> 
+
+
+    
+</body>
+</html>
